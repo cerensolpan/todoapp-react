@@ -35,9 +35,9 @@ const App = () => {
             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
             value={todoInput}
             onChange={(e) => { setTodoInput(e.target.value) }} /><hr />
-          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 mb-4' type='button' onClick={addTodo} >Add</button>
+          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 mb-4' data-testid='todo-button' type='button' onClick={addTodo} >Add</button>
         </form>
-        <div>
+        <div data-testid='todo-list'>
           {todoList.map(todo => { return <Todo key={todo.index} todo={todo} deleteTodo={deleteTodoCallback} completedTodo={completedTodo}/> })}
         </div>
       </div>
